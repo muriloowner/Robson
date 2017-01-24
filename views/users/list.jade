@@ -2,7 +2,6 @@ extends ../layout
 block content
   
   h3 Lista de Usuários
-  hr
 
   table
     thead
@@ -10,27 +9,17 @@ block content
         th Nome
         th Idate
         th Telefone
+        th 
     tbody
     each ax in data
       tr
-        td=ax.nome
+        td
+          a(href='/users/form/'+ax._id)=ax.nome
         td=ax.idade
         td=ax.telefone
+        td
+          a(href='/users/remove/'+ax._id class='btn waves-effect waves-light') Remover
 
-  a(class='btn-floating btn-large waves-effect waves-light red')
-    i(class='material-icons')='add'
-
-
-  //- div(class='row')
-  //-   form(class='col s12')
-  //-     div(class='row')
-  //-       div(class='input-field col s12')
-  //-         input(id='nome' class='validate' type='text' name='nome')
-  //-         label(for='nome') Nome
-  //-       div(class='input-field col s12')
-  //-         input(id='idade' class='validate' type='text' name='idade')
-  //-         label(for='idade') Idade
-  //-       div(class='input-field col s12')
-  //-         input(id='telefone' class='validate' type='text' name='telefone')
-  //-         label(for='telefone') Telefone
-  //-       div(class='input-field col s12')
+  div(class='fixed-action-btn')
+    a(class='btn-floating btn-large red waves-effect waves-light' href='/users/form')
+      i(class='large material-icons') add

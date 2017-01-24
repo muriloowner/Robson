@@ -1,0 +1,22 @@
+extends ../layout
+block content
+
+  h3 Formulário de Usuário
+
+  form(method='post' action='/users/form')
+    div(class='row')
+      form(class='col s12')
+        input(name='id' type='hidden' value=data.id)
+        div(class='input-field col s12')
+          input(id='nome' class='validate' type='text' name='nome' value=data.nome)
+          label(for='nome') Nome
+        div(class='input-field col s12')
+          input(id='idade' class='validate' type='text' name='idade' value=data.idade)
+          label(for='idade') Idade
+        div(class='input-field col s12')
+          input(id='telefone' class='validate' type='text' name='telefone' value=data.telefone)
+          label(for='telefone') Telefone
+        div(class='input-field col s12')
+          button(type='submit' class='btn waves-effect waves-light' href='/users') Gravar
+          &nbsp;
+          a(class='btn waves-effect waves-light' href='/users') Voltar
