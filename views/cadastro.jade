@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h1="Cadastro"
+    hr
+    a(href="/listar" class='btn btn-default')='Voltar'
+    hr
+    form(method='POST' name='caralha' action='cad')
+        label="Nome"
+        br
+        input(type="text" name="nome")
+        br
+        label="Idade"
+        br
+        input(type="text" name="idade")
+        br
+        label="Telefone"
+        br
+        input(type="text" name="telefone")
+        br
+        br
+        button(type='submit' name='cadastrar')="Cadastrar"

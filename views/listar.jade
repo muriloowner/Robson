@@ -1,0 +1,24 @@
+extends layout
+
+block content
+
+    h1= 'Listar'
+    hr
+    a(href='/cadastro' class='btn btn-primary')="Novo Cadastro"
+    hr
+    table(class='table table-striped table-hover table-bordered')
+        thead
+            tr
+                th="Nome"
+                th="Idade"
+                th="Telefone"
+                th=""
+        tbody
+        each ax in data
+            tr
+                td
+                    a(href="/alterar/"+ax._id)=ax.nome
+                td=ax.idade
+                td=ax.telefone
+                td=''
+                    a(href="/delete/"+ax._id class="btn btn-warning btn-sm")="Remover"

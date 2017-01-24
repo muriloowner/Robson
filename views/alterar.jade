@@ -1,0 +1,22 @@
+extends layout
+
+block content
+
+    form(method='post' action='/gravar' autocomplete='off')
+        input(type='text' name='_id' class='form-control' style='display: none' hidden="true" readonly='' value=data._id)
+        
+        div(class='col-md-12')
+            label='Nome'
+            input(type='text' name='nome' class='form-control' value=data.nome)
+        div(class='col-md-12')
+            label='Idade'
+            input(type='text' name='idade' class='form-control' value=data.idade)
+        div(class='col-md-12')
+            label='Telefone'
+            input(type='text' name='telefone' class='form-control' value=data.telefone)
+
+        div(class='col-md-12')
+            hr
+            button(type='submit' class='btn btn-primary')='Gravar'
+            &nbsp;
+            a(href='/listar' class='btn btn-default')='Voltar'
