@@ -6,7 +6,6 @@ const Schema = mongoose.Schema
 mongoose.connect('mongodb://localhost/robson');
 
 
-// ################
 const _schemaUser = {
   nome: String,
   idade: Number,
@@ -15,28 +14,25 @@ const _schemaUser = {
 
 const userSchema = new Schema(_schemaUser)
 const userModel = mongoose.model('usuario', userSchema)
-// #################
 
-/* GET home pages. */
 router.get('/', function (req, res) {
-  res.render('index', { title: 'Express' });
+  res.redirect('/listar')
 });
 
 
-// ###
 router.get('/cadastro', function (req, res) {
   res.render('cadastro')
 });
 
-router.post('/cad', function (req, res) {
-  const body = req.body
-  user = new userModel(body)
-  user.save((err, data) => {
-    if (err) return res.json(err)
-    return res.redirect('/cadastro')
-  })
-  // ###
-
+router.post('/cadastro', function (req, res) {
+  if (req.body.nome) {
+    const body = req.body
+    user = new userModel(body)
+    user.save((err, data) => {
+      if (err) return res.json(err)
+      return res.redirect('/listar')
+    })
+  }
 });
 
 router.get('/listar', function (req, res) {
