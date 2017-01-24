@@ -1,0 +1,36 @@
+extends ../layout
+block content
+  
+  h3 Lista de Usuários
+  hr
+
+  table
+    thead
+      tr
+        th Nome
+        th Idate
+        th Telefone
+    tbody
+    each ax in data
+      tr
+        td=ax.nome
+        td=ax.idade
+        td=ax.telefone
+
+  a(class='btn-floating btn-large waves-effect waves-light red')
+    i(class='material-icons')='add'
+
+
+  //- div(class='row')
+  //-   form(class='col s12')
+  //-     div(class='row')
+  //-       div(class='input-field col s12')
+  //-         input(id='nome' class='validate' type='text' name='nome')
+  //-         label(for='nome') Nome
+  //-       div(class='input-field col s12')
+  //-         input(id='idade' class='validate' type='text' name='idade')
+  //-         label(for='idade') Idade
+  //-       div(class='input-field col s12')
+  //-         input(id='telefone' class='validate' type='text' name='telefone')
+  //-         label(for='telefone') Telefone
+  //-       div(class='input-field col s12')

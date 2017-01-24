@@ -4,10 +4,13 @@ html
     title= title
     link(rel='stylesheet', href='/vendor/materialize/dist/css/materialize.min.css')
     style(type='text/css').
-      .footer {
-        position: absolute;
-        bottom: 0;
-        height: 60px;
+      body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+      main {
+        flex: 1 0 auto;
       }
 
   body
@@ -37,7 +40,29 @@ html
     div(class="container")
       div(class="row")
         block content
-        footer(class='footer')
-          p Copyright &copy; #{new Date().getFullYear()} Robson Corporation Inc.
+        
+
+  footer.page-footer.teal.lighten-2
+    .container
+      .row
+        .col.l6.s12
+          h5.white-text RobsCorp
+          p.grey-text.text-lighten-4 A melhor corporação de todos os tempos!
+        .col.l4.offset-l2.s12
+          h5.white-text Links
+          ul
+            li
+              a.grey-text.text-lighten-3(href='/') Link 1
+            li
+              a.grey-text.text-lighten-3(href='/') Link 2
+            li
+              a.grey-text.text-lighten-3(href='/') Link 3
+            li
+              a.grey-text.text-lighten-3(href='/') Link 4
+    .footer-copyright
+      .container© 2017 Todos os Direitos Reservados
+        a.grey-text.text-lighten-4.right(href='/') Outros Links
+
+
     script(src='/vendor/jquery/dist/jquery.min.js')
     script(src='/vendor/materialize/dist/js/materialize.min.js')
