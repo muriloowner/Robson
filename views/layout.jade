@@ -2,8 +2,42 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/vendor/materialize/dist/css/materialize.min.css')
+    style(type='text/css').
+      .footer {
+        position: absolute;
+        bottom: 0;
+        height: 60px;
+      }
+
   body
+
+    ul(id='dropdown1' class='dropdown-content')
+      li
+        a(href='/') Link 1
+      li(class='divider')
+      li
+        a(href='/') Link 2
+      li(class='divider')
+      li
+        a(href='/') Link 3
+    nav
+      div(class='nav-wrapper teal lighten-2')
+        a(class='brand-logo' href='/') &nbsp;Robson Corporation
+        ul(class='right hide-on-med-and-down')
+          li
+            a(href='/') Home
+          li
+            a(href='/') Cadastro
+          li
+            a(class='dropdown-button' href='/' data-activates='dropdown1') Menu
+              i(class='material-icons right')
+
+
     div(class="container")
       div(class="row")
         block content
+        footer(class='footer')
+          p Copyright &copy; #{new Date().getFullYear()} Robson Corporation Inc.
+    script(src='/vendor/jquery/dist/jquery.min.js')
+    script(src='/vendor/materialize/dist/js/materialize.min.js')
