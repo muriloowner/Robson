@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+/*
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 mongoose.connect('mongodb://localhost/robson');
@@ -18,12 +19,13 @@ const userModel = mongoose.model('usuario', userSchema)
 router.get('/', function (req, res) {
   res.redirect('/listar')
 });
+*/
 
-
-router.get('/cadastro', function (req, res) {
-  res.render('cadastro')
+router.get('/', function (req, res) {
+  res.render('home')
 });
 
+/*
 router.post('/cadastro', function (req, res) {
   if (req.body.nome) {
     const body = req.body
@@ -68,5 +70,5 @@ router.get('/delete/:id', function (req, res) {
     return res.redirect('/listar')
   })
 })
-
+*/
 module.exports = router;

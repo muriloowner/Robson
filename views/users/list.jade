@@ -1,0 +1,25 @@
+extends ../layout
+block content
+  
+  h3 Lista de Usuários
+
+  table
+    thead
+      tr
+        th Nome
+        th Idate
+        th Telefone
+        th 
+    tbody
+    each ax in data
+      tr
+        td
+          a(href='/users/form/'+ax._id)=ax.nome
+        td=ax.idade
+        td=ax.telefone
+        td
+          a(href='/users/remove/'+ax._id class='btn waves-effect waves-light') Remover
+
+  div(class='fixed-action-btn')
+    a(class='btn-floating btn-large red waves-effect waves-light' href='/users/form')
+      i(class='large material-icons') add
