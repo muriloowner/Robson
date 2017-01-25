@@ -2,8 +2,56 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/vendor/materialize/dist/css/materialize.min.css')
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+   
+    style(type='text/css').
+      #footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        background-color: #f5f5f5;
+      }
+      .text-muted {
+        color: #636c72!important;
+      }
+
   body
-    div(class="container")
+
+    ul(id='dropdown1' class='dropdown-content')
+      li
+        a(href='/') Link 1
+      li(class='divider')
+      li
+        a(href='/') Link 2
+      li(class='divider')
+      li
+        a(href='/') Link 3
+    nav
+      div(class='nav-wrapper teal lighten-2')
+        a(class='brand-logo' href='/') &nbsp;Robson Corporation
+        ul(class='right hide-on-med-and-down')
+          li
+            a(href='/') Home
+          li
+            a(href='/users') Cadastro
+          li
+            a(class='dropdown-button' href='/' data-activates='dropdown1') Menu
+              i(class='material-icons right')
+
+
+    div(class="container content")
       div(class="row")
         block content
+
+  footer(id='footer')
+    div(class='container')
+      span(class='text-muted') &copy; 2017 Robson Corporation. Todos os direitos reservados.
+     
+
+
+
+    script(src='/vendor/jquery/dist/jquery.min.js')
+    script(src='/vendor/materialize/dist/js/materialize.min.js')
